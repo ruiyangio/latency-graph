@@ -1,0 +1,43 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <script src="edges.js"></script>
+    <script src="nodes.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css"/>
+</head>
+<body>
+<div id="mynetwork"></div>
+
+<script type="text/javascript">
+    // create an array with nodes
+    const nodes = new vis.DataSet(nodeList);
+
+    // create an array with edges
+    const edges = new vis.DataSet(edgeList);
+
+    // create a network
+    const container = document.getElementById('mynetwork');
+
+    // provide the data in the vis format
+    const data = {
+        nodes: nodes,
+        edges: edges
+    };
+
+    const options = {
+        nodes: {
+            color: { background: '#00B8D4' },
+            shape: 'circle'
+        },
+        edges: {
+            width: 2,
+            color: { color: '#F5F5F5'},
+            hoverWidth: width => { return width + 1; }
+        }
+    };
+
+    // initialize your network!
+    const network = new vis.Network(container, data, options);
+</script>
+</body>
+</html>

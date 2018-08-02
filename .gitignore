@@ -59,3 +59,8 @@ typings/
 
 # next.js build output
 .next
+
+# app specific
+resources/
+edges.js
+nodes.js
