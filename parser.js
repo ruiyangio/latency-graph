@@ -1,6 +1,6 @@
 const fs = require('fs'); 
 const parse = require('csv-parse');
-const SCALE = 6;
+const SCALE = 4;
 const THRES = 20;
 
 function takeDCPrefix(s) {
@@ -123,7 +123,8 @@ fs.createReadStream('./resources/PingMeshFull.tsv')
     const nodeList = groups.map(group => {
         return {
             id: group.id.toString(),
-            label: Object.keys(group.nodes).join(',')
+            label: Object.keys(group.nodes).join(','),
+            group: group.id
         };
     });
 
