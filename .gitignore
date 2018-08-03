@@ -64,3 +64,5 @@ typings/
 resources/
 edges.js
 nodes.js
+
+env/
